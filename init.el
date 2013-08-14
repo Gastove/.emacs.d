@@ -1,11 +1,22 @@
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'twilight t)
+;; Add Melpa Repo -- Most of the stuff I want/need lives there.
 (require 'package)
-(add-to-list 'load-path "~/.emacs.d/packages/hyde")
-(require 'hyde)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
+
+;; Load the Twilight theme, because Awesome
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'twilight t)
+
+;; Hyde, for Octopress publishing
+(add-to-list 'load-path "~/.emacs.d/packages/hyde")
+(require 'hyde)
+
+;; Projectile, because I have too many things going on
+(require 'projectile)
+(projectile-global-mode)
+
+;; Ensime, for Scala integration
 ;; load the ensime lisp code...
 (add-to-list 'load-path "/Users/ross/.emacs.d/packages/ensime/elisp/")
 (require 'ensime)
