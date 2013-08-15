@@ -4,11 +4,16 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
-;; Load the Twilight theme, because Awesome
+;;Autopair Mode (Local)
+(add-to-list 'load-path "~/.emacs.d/packages/")
+(require 'autopair)
+(autopair-global-mode)
+
+;; Load the Twilight theme, because Awesome (Melpa)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'twilight t)
 
-;; Hyde, for Octopress publishing
+;; Hyde, for Octopress publishing 
 (add-to-list 'load-path "~/.emacs.d/packages/hyde")
 (require 'hyde)
 
