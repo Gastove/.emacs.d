@@ -9,9 +9,13 @@
 (require 'autopair)
 (autopair-global-mode)
 
-;; Load the Twilight theme, because Awesome (Melpa)
+;; Load the Twilight theme, because Awesome (git submodule)
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'twilight t)
+
+;; Helm, for completion and navigation (git submodule)
+(add-to-list 'load-path "~/.emacs.d/packages/helm")
+(require 'helm-config)
 
 ;; Hyde, for Octopress publishing 
 (add-to-list 'load-path "~/.emacs.d/packages/hyde")
@@ -25,6 +29,9 @@
 ;; load the ensime lisp code...
 (add-to-list 'load-path "/Users/ross/.emacs.d/packages/ensime/elisp/")
 (require 'ensime)
+
+;; Global paren highlighting
+(show-paren-mode 1)
 
 ;; This step causes the ensime-mode to be started whenever
 ;; scala-mode is started for a buffer. You may have to customize this step
